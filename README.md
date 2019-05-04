@@ -1,9 +1,7 @@
 pymake + python 3 patches
 =========================
 
-[![Build Status](https://travis-ci.com/fcostin/pymake.svg?branch=master)](https://travis-ci.com/fcostin/pymake)
-
-Fork of [https://github.com/mozilla/pymake](https://github.com/mozilla/pymake)
+Fork of [https://github.com/mozilla/pymake](https://github.com/mozilla/pymake) with additional patches for Python 3, breaking Python 2 support.
 
 ### What is pymake?
 
@@ -12,15 +10,16 @@ Fork of [https://github.com/mozilla/pymake](https://github.com/mozilla/pymake)
 
 Please refer to [`ORIGINAL_README`](/ORIGINAL_README) and [`LICENSE`](/LICENSE)
 
-### Why fork pymake?
+### Build status:
 
-Attempt to get pymake running under Python 3, with a stable test suite.
+Platform    | Python | CI Status
+------------|:-------|:------------
+linux       | 3.7.x  | [![Build Status](https://travis-ci.com/fcostin/pymake.svg?branch=master)](https://travis-ci.com/fcostin/pymake)
+osx         | 3.7.3  | as above -- same ci build as linux.
+windows     | todo   | todo
 
-### Will this forked version of pymake still run in Python 2?
 
-No.
-
-### Development: running the test suite
+### Development - how to run the test suite:
 
 Prerequisites:
 
