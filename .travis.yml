@@ -4,5 +4,7 @@ python:
   - "3.7"
 install:
   - pip install -r test-requirements.txt
+env:
+  - PYTHONPATH="$TRAVIS_BUILD_DIR"
 script:
-  - PYTHONPATH=$(pwd) cd tests && pytest --gmake=make .
+  - cd tests && pytest --gmake=make .
