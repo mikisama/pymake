@@ -667,8 +667,12 @@ class Pattern(object):
     def __repr__(self):
         return "<Pattern with data %r>" % (self.data,)
 
-    _backre = re.compile(r'[%\\]')
+    _backre = re.compile(r'([%\\])')
     def __str__(self):
+        # Inside __init__ we maybe unescaped some \\s and \%s,
+        # and stored the result in self.data[0] . Here, I
+        # believe we are attempting to re-insert some
+        # slashes before each % or \ .
         if not self.ispattern():
             return self._backre.sub(r'\\\1', self.data[0])
 
