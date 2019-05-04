@@ -253,7 +253,7 @@ class MakefileCorupusTest(TestBase):
                 continue
 
             source = None
-            with open(makefile, 'rU') as fh:
+            with open(makefile, 'r') as fh:
                 source = fh.read()
 
             try:
