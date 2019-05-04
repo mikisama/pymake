@@ -7,4 +7,4 @@ install:
 env:
   - PYTHONPATH="$TRAVIS_BUILD_DIR"
 script:
-  - cd tests && pytest --gmake=make .
+  - cd tests && pytest --gmake=make -n 4 .
