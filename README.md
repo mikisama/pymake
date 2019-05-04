@@ -1,6 +1,8 @@
 pymake + python 3 patches
 =========================
 
+[![Build Status](https://travis-ci.com/fcostin/pymake.svg?branch=master)](https://travis-ci.com/fcostin/pymake)
+
 Fork of [https://github.com/mozilla/pymake](https://github.com/mozilla/pymake)
 
 ### What is pymake?
