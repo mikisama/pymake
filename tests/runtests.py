@@ -15,7 +15,7 @@ The test file may contain lines at the beginning to alter the default behavior. 
 #T environment: {'VAR': 'VALUE}
 #T grep-for: "text"
 """
-from __future__ import print_function
+
 
 from subprocess import Popen, PIPE, STDOUT
 from optparse import OptionParser

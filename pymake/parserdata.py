@@ -1,12 +1,12 @@
-from __future__ import print_function
+
 
 import logging, re, os
-import data, parser, util
+from . import data, parser, util
 from pymake.globrelative import hasglob, glob
 from pymake import errors
 
 try:
-    from cStringIO import StringIO
+    from io import StringIO
 except ImportError:
     from io import StringIO
 

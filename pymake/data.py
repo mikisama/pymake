@@ -4,18 +4,18 @@ A representation of makefile data structures.
 
 import logging, re, os, sys
 from functools import reduce
-import parserdata, parser, functions, process, util, implicit
-import globrelative
+from . import parserdata, parser, functions, process, util, implicit
+from . import globrelative
 from pymake import errors
 
 try:
-    from cStringIO import StringIO
+    from io import StringIO
 except ImportError:
     from io import StringIO
 
 
 if sys.version_info[0] < 3:
-    str_type = basestring
+    str_type = str
 else:
     str_type = str
 
