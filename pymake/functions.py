@@ -793,12 +793,17 @@ class ShellFunction(Function):
             os.environ['PATH'] = oldpath
 
         stdout, stderr = p.communicate()
-        stdout = stdout.replace('\r\n', '\n')
-        if stdout.endswith('\n'):
+        stdout = stdout.replace(b'\r\n', b'\n')
+        if stdout.endswith(b'\n'):
             stdout = stdout[:-1]
-        stdout = stdout.replace('\n', ' ')
+        stdout = stdout.replace(b'\n', b' ')
 
-        fd.write(stdout)
+        # Python 3 subprocess output is bytes, not str.
+        # We need to convert it to str.
+        # XXX unsure if blindly assuming stdout is
+        # utf-8 encoded text is correct in general.
+        stdout_str = stdout.decode("utf-8")
+        fd.write(stdout_str)
 
 class ErrorFunction(Function):
     name = 'error'
