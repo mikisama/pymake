@@ -1,10 +1,18 @@
-dist: xenial
-language: python
-python:
-  - "3.7"
-install:
-  - pip install -r test-requirements.txt
+matrix:
+    include:
+        - os: linux
+          dist: xenial
+          language: python
+          python: 3.7
+        - os: osx
+          language: generic
+          env: PYTHON=3.7.3
 env:
   - PYTHONPATH="$TRAVIS_BUILD_DIR"
+before_install:
+    - .travis/install.sh
+    - source .travis/activate_virtualenv.sh
+install:
+    - pip install -r test-requirements.txt
 script:
   - cd tests && pytest --gmake=make -n 4 .
