@@ -20,24 +20,25 @@ Attempt to get pymake running under Python 3, with a stable test suite.
 
 No.
 
-### Running the test suite
+### Development: running the test suite
 
 Prerequisites:
 
 *	default `python` is Python 3
 *	[pytest](https://docs.pytest.org) installed (`pip install -r test-requirements.txt`)
+*	a dev install of `pymake` package in this repo (`pip install -e .`)
 *	GNU Make installed to test against (assumed to be named `gmake`, can be overridden)
 
-With [pytest](https://docs.pytest.org) installed, the test suite can be run from the `tests/` directory as follows:
+With [pytest](https://docs.pytest.org) installed, the test suite can be run from the root directory of this repo as follows:
 
 ```
-PYTHONPATH=$(pwd)/.. pytest --gmake=make .
+pytest --gmake=make .
 ```
 
 With the optional `pytest-dist` plugin installed, the tests can be run in parallel. For example, to use 8 CPUs:
 
 ```
-PYTHONPATH=$(pwd)/.. pytest --gmake=make -n 8 .
+pytest --gmake=make -n 8 .
 ```
 
 This gives about a 5x speedup on my machine.

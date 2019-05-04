@@ -1,3 +1,4 @@
 *.pyc
 tests/*makelog
 .ropeproject/
+*.egg-info/*

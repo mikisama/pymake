@@ -17,7 +17,7 @@ from pymake import errors
 # TODO: If this ever goes from relocatable package to system-installed, this may need to be
 # a configured-in path.
 
-makepypath = util.normaljoin(os.path.dirname(__file__), '../make.py')
+makepypath = util.normaljoin(os.path.dirname(__file__), 'cli/main.py')
 
 _simpleopts = re.compile(r'^[a-zA-Z]+(\s|$)')
 def parsemakeflags(env):

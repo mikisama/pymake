@@ -18,9 +18,16 @@ The test file may contain directive lines at the beginning to alter the default 
 
 
 import subprocess
-import os, re, sys
+import os
+import re
+import sys
+import pytest
 
 THISDIR = os.path.dirname(os.path.abspath(__file__))
+
+@pytest.fixture
+def pymake():
+    return [sys.executable, "-m", "pymake.cli.main"]
 
 class ParentDict(dict):
     def __init__(self, parent, **kwargs):
@@ -163,7 +170,7 @@ def test_scenarios(makefile, tmp_path_factory, gmake, pymake):
     if pymakeoptions['skip']:
         pymakepass, pymakemsg = True, ''
     else:
-        pymakepass, pymakemsg = run_test(makefile, [sys.executable, pymake],
+        pymakepass, pymakemsg = run_test(makefile, pymake,
                                         makefile + '.pymakelog', pymakeoptions)
 
     if pymakeoptions['pass']:
