@@ -41,3 +41,15 @@ pytest --gmake=make -n 8 .
 ```
 
 This gives about a 5x speedup on my machine.
+
+### Installation
+```
+$ pip install git+https://github.com/mikisama/pymake
+```
+
+### Usage
+```
+$ pymake -h
+$ mkformat path_to/Makefile
+$ mkparse path_to/Makefile
+```
