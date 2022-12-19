@@ -10,7 +10,7 @@ _GetExitCodeProcess = _GetExitCodeProcessProto(("GetExitCodeProcess", windll.ker
 def GetExitCodeProcess(h):
     exitcode = DWORD()
     r = _GetExitCodeProcess(h, byref(exitcode))
-    if r is 0:
+    if r == 0:
         raise WinError()
     return exitcode.value
 
