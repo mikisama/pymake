@@ -2,3 +2,7 @@
 tests/*makelog
 .ropeproject/
 *.egg-info/*
+.venv
+venv
+build/
+dist/
